@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "lint": "eslint",
-    "start": "nodemon",
+    "dev": "nodemon ./expressServer.cjs",
     "test": "mocha"
   },
   "repository": {
@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/gSchool/fs-pet-shop#readme",
   "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.1",
     "nodemon": "^1.19.4"
   },
   "devDependencies": {

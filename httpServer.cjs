@@ -1,11 +1,17 @@
 const PATH = require('path');
 const fs = require('fs');
 const http = require('http');
+
 const PORT = 8000;
 
 let server = http.createServer((req, res) => {
-   
-    if(req.method === 'GET' && req.url === "/pets"){
+
+     let url = req.url;
+     const regex = /[/pets/\d]/g;
+     const arr = url.match(regex);
+
+
+    if(req.method === 'GET' && arr.length === 5){
         let petsPath = PATH.join(__dirname, 'pets.json');
         fs.readFile(petsPath,'utf8', function (err, petsJson){
             if(err){
