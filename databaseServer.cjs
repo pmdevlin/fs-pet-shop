@@ -6,6 +6,10 @@ const PORT = 7878
 
 // this gives us ability to take in the body data for a post route
 app.use(express.json())
+app.use(express.static('client'))
+
+
+
 
 app.get('/pets', db.getPets)
 app.get('/pets/:id', db.getById)

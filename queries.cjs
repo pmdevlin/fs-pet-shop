@@ -103,3 +103,5 @@ module.exports = {
     remove
 
 };
+
+//how do you render a static html file in a folder 
