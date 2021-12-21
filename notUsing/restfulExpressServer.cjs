@@ -11,7 +11,6 @@ console.log(petsPath)
 app.use(express.json())
 
 
-
 // able to add information to pets.json 
 app.post('/pets', (req, res) => {
     const pet = Object.assign({age:req.body['age'], kind: req.body['kind'], name: req.body['name'] });
@@ -74,6 +73,7 @@ app.patch('/pets/:id', (req, res) => {
     })
 })
 
+// able to delete pet data at the given id
 app.delete('/pets/:id', (req, res) => {
     fs.readFile(petsPath, 'utf8', (err, data) => {
         if(err){
@@ -104,7 +104,7 @@ app.delete('/pets/:id', (req, res) => {
     })
 })
 
-
+// get all pet data 
 app.get('/pets',  (req, res) => {
     fs.readFile(petsPath,'utf8', (err, data) => {
         if(err){
@@ -121,7 +121,7 @@ app.get('/pets',  (req, res) => {
 
 })
 
-
+// add data function 
 const getPetData = (pet, res) =>{
     fs.readFile(petsPath, 'utf8', (err, data) => {
         if(err){
