@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "lint": "eslint",
-    "dev": "nodemon ./expressServer.cjs",
+    "dev": "nodemon ./restfulExpressServer.cjs",
     "test": "mocha"
   },
   "repository": {
